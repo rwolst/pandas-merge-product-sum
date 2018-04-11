@@ -4,8 +4,8 @@ import numpy as np
 import scipy as sp
 import scipy.sparse
 
-from mps import (merge_product_sum, to_sparse, multiply_sparse,
-                 reverse_index_map)
+from merge_product_sum.mps import (merge_product_sum, to_sparse,
+                                   multiply_sparse, reverse_index_map)
 
 @pytest.fixture()
 def df1():
