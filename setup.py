@@ -70,7 +70,7 @@ setup(
     #
     # For an analysis of "install_requires" vs pip's requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=['pandas', 'scipy', 'numpy'],  # Optional
+    install_requires=['pandas', 'scipy', 'numpy>=1.13.0'],  # Optional
 
     # Similar to `install_requires` above, these must be valid existing
     # projects.
