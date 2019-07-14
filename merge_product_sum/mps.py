@@ -3,6 +3,7 @@ import scipy.sparse
 import numpy as np
 import pandas as pd
 
+
 def merge_product_sum(df1, df2, on, lindex, rindex, lval, rval):
     # Set index on dataframes
     df1 = df1.set_index(lindex + on)
@@ -38,6 +39,7 @@ def merge_product_sum(df1, df2, on, lindex, rindex, lval, rval):
 
     return df
 
+
 def from_sparse(m, df1, df2):
     """Convert sparse matrix back to a Pandas dataframe."""
     # First split the rows back into labels on df1
@@ -48,6 +50,7 @@ def from_sparse(m, df1, df2):
     df = pd.concat((names1, names2, values), axis=1)
 
     return df
+
 
 def reverse_index_map(x, idx):
     """Reverses the mapping of the df multiindex onto integers.
@@ -77,6 +80,7 @@ def reverse_index_map(x, idx):
 
     return out
 
+
 def to_sparse(df, index, val):
     mult = 1
     rows = np.zeros(len(df))
@@ -92,6 +96,7 @@ def to_sparse(df, index, val):
     values = df[val[0]]
 
     return sp.sparse.coo_matrix((values, (rows, cols)), shape=[n_rows, n_cols])
+
 
 def multiply_sparse(m1, m2):
     """Take sparse matrices m1 and m2 in coo format, calculate
