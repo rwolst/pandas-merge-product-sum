@@ -150,8 +150,8 @@ def test_reverse_index_map(df1, df2, df, df_sparse):
     df2_reversed = reverse_index_map(df_sparse.col, 
                                      df2.set_index(['COUNTRY', 'TEAM', 'Z']).index)
 
-    assert (df[['DATE', 'NAME']] == df1_reversed).all().all()
-    assert (df[['COUNTRY', 'TEAM']] == df2_reversed).all().all()
+    assert (df[['NAME', 'DATE']] == df1_reversed).all().all()
+    assert (df[['TEAM', 'COUNTRY']] == df2_reversed).all().all()
 
 def test_to_sparse(df1, df1_sparse, df2, df2_sparse):
     """Test the to_sparse function."""
